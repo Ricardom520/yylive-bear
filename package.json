@@ -73,6 +73,13 @@
     "react": ">=18.2.0",
     "react-dom": ">=18.2.0"
   },
-  "files": ["dist"],
-  "winkeyWorkFlow": "vite"
+  "files": [
+    "dist"
+  ],
+  "winkeyWorkFlow": "vite",
+  "dependencies": {
+    "@nlpjs/basic": "^4.26.1",
+    "@nlpjs/core": "^4.26.1",
+    "@nlpjs/lang-zh": "^4.26.1"
+  }
 }

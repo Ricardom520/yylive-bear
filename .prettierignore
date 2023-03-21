@@ -18,3 +18,4 @@ yarn.lock
 *.jpg
 *.jpeg
 *.pug
+*.js

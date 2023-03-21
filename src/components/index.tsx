@@ -1,5 +1,6 @@
 import ReactDOM from 'react-dom'
 import YYLiveBear from './YYLiveBear'
+import '../utils/libs/nlp.js'
 
 export const initYYLiveBear = (id: string) => {
   const target = document.getElementById(id)

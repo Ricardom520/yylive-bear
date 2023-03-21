@@ -1,0 +1,1108 @@
+{
+  "settings": {
+    "tag": "nlp",
+    "forceNER": true,
+    "threshold": 0.01,
+    "languages": [
+      "en",
+      "zh"
+    ],
+    "calculateSentiment": true,
+    "executeActionsBeforeAnswers": false
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en",
+      "zh"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {},
+        "intentDict": {},
+        "sentences": [],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {},
+            "intents": {},
+            "intentFeatures": {},
+            "featuresToIntent": {},
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              }
+            }
+          }
+        }
+      },
+      "zh": {
+        "settings": {
+          "locale": "zh",
+          "trainByDomain": false,
+          "tag": "domain-manager-zh",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "@danmu,发,帮,弹幕,我,条": {
+            "intent": "danmu.filter",
+            "domain": "default"
+          },
+          "@danmu,发,帮,弹幕,我": {
+            "intent": "danmu.filter",
+            "domain": "default"
+          },
+          "@danmu,发,弹幕,条": {
+            "intent": "danmu.filter",
+            "domain": "default"
+          },
+          "@danmu,一,发,帮,弹幕,我,条": {
+            "intent": "danmu.filter",
+            "domain": "default"
+          },
+          "@danmu,一,发,弹幕,条": {
+            "intent": "danmu.filter",
+            "domain": "default"
+          },
+          "@danmu,弹幕,条,来": {
+            "intent": "danmu.filter",
+            "domain": "default"
+          },
+          "@danmu,一,弹幕,条,来": {
+            "intent": "danmu.filter",
+            "domain": "default"
+          },
+          "跳,转,首页": {
+            "intent": "homePage.filter",
+            "domain": "default"
+          },
+          "到,去,跳,首页": {
+            "intent": "homePage.filter",
+            "domain": "default"
+          },
+          "到,我,给,跳,首页": {
+            "intent": "homePage.filter",
+            "domain": "default"
+          },
+          "吧,那，跳,首页": {
+            "intent": "homePage.filter",
+            "domain": "default"
+          },
+          "到,跳,首页": {
+            "intent": "homePage.filter",
+            "domain": "default"
+          },
+          "跳,首页": {
+            "intent": "homePage.filter",
+            "domain": "default"
+          },
+          "去,首页": {
+            "intent": "homePage.filter",
+            "domain": "default"
+          },
+          "到,去,首页": {
+            "intent": "homePage.filter",
+            "domain": "default"
+          },
+          "@live,到,去,的,直播,间": {
+            "intent": "live.filter",
+            "domain": "default"
+          },
+          "@live,去,的,直播,间": {
+            "intent": "live.filter",
+            "domain": "default"
+          },
+          "@live,到,的,直播,跳,间": {
+            "intent": "live.filter",
+            "domain": "default"
+          },
+          "@live,的,直播,跳,间": {
+            "intent": "live.filter",
+            "domain": "default"
+          },
+          "@live,打开,的,直播,间": {
+            "intent": "live.filter",
+            "domain": "default"
+          },
+          "@live,帮我,打开,的直播,间": {
+            "intent": "live.filter",
+            "domain": "default"
+          },
+          "@person,个人页,去,的": {
+            "intent": "person.filter",
+            "domain": "default"
+          },
+          "@person,个人页,到,去,的": {
+            "intent": "person.filter",
+            "domain": "default"
+          },
+          "@person,去,的,页面": {
+            "intent": "person.filter",
+            "domain": "default"
+          },
+          "@person,去,的,网站": {
+            "intent": "person.filter",
+            "domain": "default"
+          },
+          "@person,到,去,的,页面": {
+            "intent": "person.filter",
+            "domain": "default"
+          },
+          "到@person,去,的,网站": {
+            "intent": "person.filter",
+            "domain": "default"
+          },
+          "@person,的,网站,跳": {
+            "intent": "person.filter",
+            "domain": "default"
+          },
+          "@person,到,的,网站,跳": {
+            "intent": "person.filter",
+            "domain": "default"
+          },
+          "@person,个人页,的,跳": {
+            "intent": "person.filter",
+            "domain": "default"
+          },
+          "@person,个人页,去,的,跳": {
+            "intent": "person.filter",
+            "domain": "default"
+          },
+          "@person,个人页,到,的,跳": {
+            "intent": "person.filter",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "danmu.filter": "default",
+          "homePage.filter": "default",
+          "live.filter": "default",
+          "person.filter": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "帮 我 发 条 弹幕 @danmu",
+            "intent": "danmu.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "帮 我 发 弹幕 @danmu",
+            "intent": "danmu.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "发 条 弹幕 @danmu",
+            "intent": "danmu.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "帮 我 发 一 条 弹幕 @danmu",
+            "intent": "danmu.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "发 一 条 弹幕 @danmu",
+            "intent": "danmu.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "来 条 弹幕 @danmu",
+            "intent": "danmu.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "来 一 条 弹幕 @danmu",
+            "intent": "danmu.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "跳 转 首页",
+            "intent": "homePage.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "跳 到 首页 去",
+            "intent": "homePage.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "给 我 跳 到 首页",
+            "intent": "homePage.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "那，跳 首页 吧",
+            "intent": "homePage.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "跳 到 首页",
+            "intent": "homePage.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "跳 首页",
+            "intent": "homePage.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "去 首页",
+            "intent": "homePage.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "去 到 首页",
+            "intent": "homePage.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "去 到 @live 的 直播 间",
+            "intent": "live.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "去 @live 的 直播 间",
+            "intent": "live.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "跳 到 @live 的 直播 间",
+            "intent": "live.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "跳 @live 的 直播 间",
+            "intent": "live.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "打开 @live 的 直播 间",
+            "intent": "live.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "帮我 打开 @live 的直播 间",
+            "intent": "live.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "去 @person 的 个人页",
+            "intent": "person.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "去 到 @person 的 个人页",
+            "intent": "person.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "去 @person 的 页面",
+            "intent": "person.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "去 @person 的 网站",
+            "intent": "person.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "去 到 @person 的 页面",
+            "intent": "person.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "去  到@person 的 网站",
+            "intent": "person.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "跳 @person 的 网站",
+            "intent": "person.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "跳 到 @person 的 网站",
+            "intent": "person.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "跳 @person 的 个人页",
+            "intent": "person.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "跳 去 @person 的 个人页",
+            "intent": "person.filter"
+          },
+          {
+            "domain": "default",
+            "utterance": "跳 到 @person 的 个人页",
+            "intent": "person.filter"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "zh",
+              "tag": "nlu-zh",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "帮": 1,
+              "我": 1,
+              "发": 1,
+              "条": 1,
+              "弹幕": 1,
+              "@danmu": 1,
+              "一": 1,
+              "来": 1,
+              "跳": 1,
+              "转": 1,
+              "首页": 1,
+              "到": 1,
+              "去": 1,
+              "给": 1,
+              "那，跳": 1,
+              "吧": 1,
+              "@live": 1,
+              "的": 1,
+              "直播": 1,
+              "间": 1,
+              "打开": 1,
+              "帮我": 1,
+              "的直播": 1,
+              "@person": 1,
+              "个人页": 1,
+              "页面": 1,
+              "网站": 1,
+              "到@person": 1
+            },
+            "intents": {
+              "danmu.filter": 1,
+              "homePage.filter": 1,
+              "live.filter": 1,
+              "person.filter": 1
+            },
+            "intentFeatures": {
+              "danmu.filter": {
+                "帮": 1,
+                "我": 1,
+                "发": 1,
+                "条": 1,
+                "弹幕": 1,
+                "@danmu": 1,
+                "一": 1,
+                "来": 1
+              },
+              "homePage.filter": {
+                "跳": 1,
+                "转": 1,
+                "首页": 1,
+                "到": 1,
+                "去": 1,
+                "给": 1,
+                "我": 1,
+                "那，跳": 1,
+                "吧": 1
+              },
+              "live.filter": {
+                "去": 1,
+                "到": 1,
+                "@live": 1,
+                "的": 1,
+                "直播": 1,
+                "间": 1,
+                "跳": 1,
+                "打开": 1,
+                "帮我": 1,
+                "的直播": 1
+              },
+              "person.filter": {
+                "去": 1,
+                "@person": 1,
+                "的": 1,
+                "个人页": 1,
+                "到": 1,
+                "页面": 1,
+                "网站": 1,
+                "到@person": 1,
+                "跳": 1
+              }
+            },
+            "featuresToIntent": {
+              "帮": [
+                "danmu.filter"
+              ],
+              "我": [
+                "danmu.filter",
+                "homePage.filter"
+              ],
+              "发": [
+                "danmu.filter"
+              ],
+              "条": [
+                "danmu.filter"
+              ],
+              "弹幕": [
+                "danmu.filter"
+              ],
+              "@danmu": [
+                "danmu.filter"
+              ],
+              "一": [
+                "danmu.filter"
+              ],
+              "来": [
+                "danmu.filter"
+              ],
+              "跳": [
+                "homePage.filter",
+                "live.filter",
+                "person.filter"
+              ],
+              "转": [
+                "homePage.filter"
+              ],
+              "首页": [
+                "homePage.filter"
+              ],
+              "到": [
+                "homePage.filter",
+                "live.filter",
+                "person.filter"
+              ],
+              "去": [
+                "homePage.filter",
+                "live.filter",
+                "person.filter"
+              ],
+              "给": [
+                "homePage.filter"
+              ],
+              "那，跳": [
+                "homePage.filter"
+              ],
+              "吧": [
+                "homePage.filter"
+              ],
+              "@live": [
+                "live.filter"
+              ],
+              "的": [
+                "live.filter",
+                "person.filter"
+              ],
+              "直播": [
+                "live.filter"
+              ],
+              "间": [
+                "live.filter"
+              ],
+              "打开": [
+                "live.filter"
+              ],
+              "帮我": [
+                "live.filter"
+              ],
+              "的直播": [
+                "live.filter"
+              ],
+              "@person": [
+                "person.filter"
+              ],
+              "个人页": [
+                "person.filter"
+              ],
+              "页面": [
+                "person.filter"
+              ],
+              "网站": [
+                "person.filter"
+              ],
+              "到@person": [
+                "person.filter"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "zh",
+                "tag": "nlu-zh",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "帮",
+                "我",
+                "发",
+                "条",
+                "弹幕",
+                "@danmu",
+                "一",
+                "来",
+                "跳",
+                "转",
+                "首页",
+                "到",
+                "去",
+                "给",
+                "那，跳",
+                "吧",
+                "@live",
+                "的",
+                "直播",
+                "间",
+                "打开",
+                "帮我",
+                "的直播",
+                "@person",
+                "个人页",
+                "页面",
+                "网站",
+                "到@person"
+              ],
+              "intents": [
+                "danmu.filter",
+                "homePage.filter",
+                "live.filter",
+                "person.filter"
+              ],
+              "perceptrons": [
+                [
+                  0.2130063772201538,
+                  -0.042946770787239075,
+                  2.4580137729644775,
+                  0.38036540150642395,
+                  4.944184303283691,
+                  4.944184303283691,
+                  -0.07692886143922806,
+                  2.4840054512023926,
+                  -0.7088218331336975,
+                  -0.08356691896915436,
+                  -1.035139560699463,
+                  -0.5465703010559082,
+                  -0.7217376828193665,
+                  -0.18282543122768402,
+                  -0.264628529548645,
+                  -0.264628529548645,
+                  -0.46204137802124023,
+                  -0.5788213610649109,
+                  -0.2215392291545868,
+                  -0.46204137802124023,
+                  -0.25744274258613586,
+                  -0.1928415298461914,
+                  -0.1928415298461914,
+                  -0.19623839855194092,
+                  -0.08283539861440659,
+                  -0.07283607870340347,
+                  -0.15348894894123077,
+                  -0.113116554915905,
+                  1.5691173127710338
+                ],
+                [
+                  -0.5413650274276733,
+                  -0.07693587243556976,
+                  -0.5914336442947388,
+                  -0.6752421855926514,
+                  -0.9311006665229797,
+                  -0.9311006665229797,
+                  -0.10378802567720413,
+                  -0.32208940386772156,
+                  1.0428000688552856,
+                  0.2059011161327362,
+                  10.235087394714355,
+                  -0.14847329258918762,
+                  1.031775951385498,
+                  0.48460811376571655,
+                  0.6975547075271606,
+                  0.6975547075271606,
+                  -1.459273099899292,
+                  -3.5535242557525635,
+                  -1.3314481973648071,
+                  -1.459273099899292,
+                  -0.0005335575551725924,
+                  -0.0005335575551725924,
+                  -0.0005335575551725924,
+                  -2.011911153793335,
+                  -0.9408739805221558,
+                  -0.22646178305149078,
+                  -0.736521303653717,
+                  -0.025594696402549744,
+                  2.8800394949315833
+                ],
+                [
+                  -0.09479139745235443,
+                  -0.2182260900735855,
+                  -0.16442444920539856,
+                  -0.17400571703910828,
+                  -0.22033913433551788,
+                  -0.22033913433551788,
+                  -0.03587602823972702,
+                  -0.04330260679125786,
+                  0.26054835319519043,
+                  -0.1421319544315338,
+                  -1.0821155309677124,
+                  0.032020024955272675,
+                  0.26644960045814514,
+                  -0.10456959903240204,
+                  -0.007403519935905933,
+                  -0.007403519935905933,
+                  4.892218112945557,
+                  0.58397376537323,
+                  3.0879018306732178,
+                  4.892218112945557,
+                  0.34052592515945435,
+                  1.8044545650482178,
+                  1.8044545650482178,
+                  -2.037102699279785,
+                  -0.868121325969696,
+                  -0.35022446513175964,
+                  -0.9731676578521729,
+                  -0.41629815101623535,
+                  0.5374777940586766
+                ],
+                [
+                  -0.3004577159881592,
+                  -0.44110092520713806,
+                  -0.48154523968696594,
+                  -0.44965860247612,
+                  -0.595853328704834,
+                  -0.595853328704834,
+                  -0.08557046949863434,
+                  -0.06796188652515411,
+                  0.27162763476371765,
+                  -0.114226333796978,
+                  -2.4491937160491943,
+                  0.07945947349071503,
+                  0.34165945649147034,
+                  -0.10077907890081406,
+                  -0.029583662748336792,
+                  -0.029583662748336792,
+                  -2.5012903213500977,
+                  5.709223747253418,
+                  -2.5012903213500977,
+                  -2.5012903213500977,
+                  -0.0010014931904152036,
+                  0,
+                  0,
+                  4.149974822998047,
+                  2.7006947994232178,
+                  2.7041914463043213,
+                  2.806596279144287,
+                  4.055251598358154,
+                  1.3054554329287065
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "zh",
+        "帮 我 发 条 弹幕 @danmu"
+      ],
+      [
+        "zh",
+        "帮 我 发 弹幕 @danmu"
+      ],
+      [
+        "zh",
+        "发 条 弹幕 @danmu"
+      ],
+      [
+        "zh",
+        "帮 我 发 一 条 弹幕 @danmu"
+      ],
+      [
+        "zh",
+        "发 一 条 弹幕 @danmu"
+      ],
+      [
+        "zh",
+        "来 条 弹幕 @danmu"
+      ],
+      [
+        "zh",
+        "来 一 条 弹幕 @danmu"
+      ],
+      [
+        "zh",
+        "跳 转 首页"
+      ],
+      [
+        "zh",
+        "跳 到 首页 去"
+      ],
+      [
+        "zh",
+        "给 我 跳 到 首页"
+      ],
+      [
+        "zh",
+        "那，跳 首页 吧"
+      ],
+      [
+        "zh",
+        "跳 到 首页"
+      ],
+      [
+        "zh",
+        "跳 首页"
+      ],
+      [
+        "zh",
+        "去 首页"
+      ],
+      [
+        "zh",
+        "去 到 首页"
+      ],
+      [
+        "zh",
+        "去 到 @live 的 直播 间"
+      ],
+      [
+        "zh",
+        "去 @live 的 直播 间"
+      ],
+      [
+        "zh",
+        "跳 到 @live 的 直播 间"
+      ],
+      [
+        "zh",
+        "跳 @live 的 直播 间"
+      ],
+      [
+        "zh",
+        "打开 @live 的 直播 间"
+      ],
+      [
+        "zh",
+        "帮我 打开 @live 的直播 间"
+      ],
+      [
+        "zh",
+        "去 @person 的 个人页"
+      ],
+      [
+        "zh",
+        "去 到 @person 的 个人页"
+      ],
+      [
+        "zh",
+        "去 @person 的 页面"
+      ],
+      [
+        "zh",
+        "去 @person 的 网站"
+      ],
+      [
+        "zh",
+        "去 到 @person 的 页面"
+      ],
+      [
+        "zh",
+        "去  到@person 的 网站"
+      ],
+      [
+        "zh",
+        "跳 @person 的 网站"
+      ],
+      [
+        "zh",
+        "跳 到 @person 的 网站"
+      ],
+      [
+        "zh",
+        "跳 @person 的 个人页"
+      ],
+      [
+        "zh",
+        "跳 去 @person 的 个人页"
+      ],
+      [
+        "zh",
+        "跳 到 @person 的 个人页"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner"
+    },
+    "rules": {
+      "zh": {
+        "danmu": {
+          "name": "danmu",
+          "type": "trim",
+          "rules": [
+            {
+              "type": "afterLast",
+              "words": [
+                "弹幕"
+              ],
+              "options": {}
+            }
+          ]
+        },
+        "live": {
+          "name": "live",
+          "type": "trim",
+          "rules": [
+            {
+              "type": "between",
+              "leftWords": [
+                "打开"
+              ],
+              "rightWords": [
+                "直播"
+              ],
+              "regex": "/ 打开 (?!.* 打开 .*)(.*) 直播 /gi",
+              "options": {
+                "closest": true
+              }
+            },
+            {
+              "type": "between",
+              "leftWords": [
+                "去到"
+              ],
+              "rightWords": [
+                "直播"
+              ],
+              "regex": "/ 去到 (?!.* 去到 .*)(.*) 直播 /gi",
+              "options": {
+                "closest": true
+              }
+            },
+            {
+              "type": "between",
+              "leftWords": [
+                "跳到"
+              ],
+              "rightWords": [
+                "直播"
+              ],
+              "regex": "/ 跳到 (?!.* 跳到 .*)(.*) 直播 /gi",
+              "options": {
+                "closest": true
+              }
+            },
+            {
+              "type": "between",
+              "leftWords": [
+                "去"
+              ],
+              "rightWords": [
+                "直播"
+              ],
+              "regex": "/ 去 (?!.* 去 .*)(.*) 直播 /gi",
+              "options": {
+                "closest": true
+              }
+            },
+            {
+              "type": "between",
+              "leftWords": [
+                "跳"
+              ],
+              "rightWords": [
+                "直播"
+              ],
+              "regex": "/ 跳 (?!.* 跳 .*)(.*) 直播 /gi",
+              "options": {
+                "closest": true
+              }
+            }
+          ]
+        },
+        "person": {
+          "name": "person",
+          "type": "trim",
+          "rules": [
+            {
+              "type": "between",
+              "leftWords": [
+                "打开"
+              ],
+              "rightWords": [
+                "个人"
+              ],
+              "regex": "/ 打开 (?!.* 打开 .*)(.*) 个人 /gi",
+              "options": {
+                "closest": true
+              }
+            },
+            {
+              "type": "between",
+              "leftWords": [
+                "去到"
+              ],
+              "rightWords": [
+                "个人"
+              ],
+              "regex": "/ 去到 (?!.* 去到 .*)(.*) 个人 /gi",
+              "options": {
+                "closest": true
+              }
+            },
+            {
+              "type": "between",
+              "leftWords": [
+                "跳到"
+              ],
+              "rightWords": [
+                "个人"
+              ],
+              "regex": "/ 跳到 (?!.* 跳到 .*)(.*) 个人 /gi",
+              "options": {
+                "closest": true
+              }
+            },
+            {
+              "type": "between",
+              "leftWords": [
+                "去"
+              ],
+              "rightWords": [
+                "个人"
+              ],
+              "regex": "/ 去 (?!.* 去 .*)(.*) 个人 /gi",
+              "options": {
+                "closest": true
+              }
+            },
+            {
+              "type": "between",
+              "leftWords": [
+                "跳"
+              ],
+              "rightWords": [
+                "个人"
+              ],
+              "regex": "/ 跳 (?!.* 跳 .*)(.*) 个人 /gi",
+              "options": {
+                "closest": true
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "zh": {
+        "danmu.filter": [
+          {
+            "answer": "{type: 3, value: {{danmu}}}"
+          }
+        ],
+        "homePage.filter": [
+          {
+            "answer": "{type: 0}"
+          }
+        ],
+        "live.filter": [
+          {
+            "answer": "{type: 2, value: {{live}}}"
+          }
+        ],
+        "person.filter": [
+          {
+            "answer": "{type: 1, value: {{person}}}"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {
+    "danmu.filter": {
+      "danmu": {
+        "intent": "danmu.filter",
+        "entity": "danmu",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "live.filter": {
+      "live": {
+        "intent": "live.filter",
+        "entity": "live",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "person.filter": {
+      "person": {
+        "intent": "person.filter",
+        "entity": "person",
+        "mandatory": false,
+        "locales": {}
+      }
+    }
+  }
+}
