@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { TokenizerZh } from '@nlpjs/lang-zh'
 import { recorder } from './recorder'
 import Canvas from './canvas'
 
@@ -35,19 +34,8 @@ const YYLiveBear: React.FC = () => {
     })
   }
 
-  const testNlp = async () => {
-    const tokenizer = new TokenizerZh()
-    const input = '帮我发条弹幕666'
-    const result = tokenizer.tokenize(input)
-
-    const result1 = await window.nlpjs.process('zh', result.join(' '))
-
-    console.log(result1)
-  }
-
   useEffect(() => {
     init()
-    testNlp()
   }, [])
 
   return (

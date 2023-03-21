@@ -1,6 +1,6 @@
 {
   "name": "yylive-bear",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "ISC",
   "eslintIgnore": [
     "node_modules",
@@ -63,7 +63,6 @@
     "winkey-init-config-vite": "^1.1.6"
   },
   "description": "",
-  "main": "dist/yylive-bear.umd.cjs",
   "module": "dist/yylive-bear.js",
   "type": "module",
   "typings": "dist/index.d.ts",
