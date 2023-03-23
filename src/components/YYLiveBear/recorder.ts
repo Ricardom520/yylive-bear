@@ -19,15 +19,11 @@ class Recorder {
   stop = () => {
     console.log('stop')
     this.record.stop()
-
-    
   }
 
   upload = () => {
     return new Promise((resolve) => {
-      this.record.onresult = async (e: {
-        results: SpeechRecognitionResult[]
-      }) => {
+      this.record.onresult = async (e: { results: SpeechRecognitionResult[] }) => {
         const results = e.results
         console.log('results:', results)
         if (results && results[0] && results[0][0]) {
@@ -44,12 +40,20 @@ class Recorder {
     })
 
     if (res.code === 0) {
-      const userInfo = res.data.response[1].docs[0]
+      let userInfo = null
+      let danmuValue = ''
+
+      if (res.type !== 0) {
+        userInfo = res.data.response[1].docs[0]
+      } else {
+        danmuValue = res.value
+      }
 
       console.log('userInfo:', userInfo)
       return {
         type: res.type,
-        userInfo
+        userInfo,
+        danmuValue
       }
     }
     console.log(res)

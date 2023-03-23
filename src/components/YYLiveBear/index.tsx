@@ -28,25 +28,44 @@ const YYLiveBear: React.FC = () => {
         recorder.stop()
         // Recorder.stop()
         const res: any = await recorder.upload()
-        
+
         handleResult(res)
         start = false
       }
     })
   }
 
-  const handleResult = (res: {
-    type: number
-    userInfo: any
-  }) => {
+  const handleResult = (res: { type: number; userInfo: any }) => {
     console.log('res:', res)
-    switch(res.type) {
+    switch (res.type) {
       case 2:
-        sayOk(() => window.location.href = `https://www.yy.com/${res.userInfo.sid}/${res.userInfo.ssid}?tempId=16777217`)
+        // 去直播间
+        sayOk(
+          () =>
+            (window.location.href = `https://www.yy.com/${res.userInfo.sid}/${res.userInfo.ssid}?tempId=16777217`)
+        )
         break
       case 1:
-        sayOk(() => window.location.href = `https://www.yy.com/u/${res.userInfo.yyid}`)
+        // 去个人页
+        sayOk(() => (window.location.href = `https://www.yy.com/u/${res.userInfo.yyid}`))
         break
+      case 0:
+        // 去首页
+        sayOk(() => (window.location.href = `https://www.yy.com`))
+        break
+      case 3:
+        sayOk(() =>
+          window.postMessage(
+            {
+              origin: 'yylive_plugin',
+              data: {
+                type: 0,
+                value: 'Hello'
+              }
+            },
+            'https://www.yy.com'
+          )
+        )
     }
   }
 
